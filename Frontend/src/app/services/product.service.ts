@@ -12,65 +12,24 @@ export class ProductService {
     private _http : HttpClient
   ) { }
 
-  getAllProducts(){
-    return this._http.get(
-      this.url + 'products'
-    ).pipe(map(res => res));
+  getProductById<T>(id: string) {
+    return this._http.get<T>(`${this.url}product/${id}`);
   }
 
-  getProductById(id){
-    let options = {
-      headers: new HttpHeaders(
-        {
-          'Content-Type': 'application/json'
-        })
-    };
-    return this._http.get(
-      this.url + 'product/' + id,
-    ).pipe(map(res => res));
+  getAllProducts<T>(){
+    return this._http.get<T>(`${this.url}products`);
   }
 
-  createProduct(product) {
-    let params = JSON.stringify(product);
-    let options = {
-      headers: new HttpHeaders(
-        { 'Content-Type': 'application/json' })
-    };
-    return this._http.post(
-      this.url + "product",
-      params,
-      options
-    ).pipe(map(res => res));
+  createProduct<T>(product: any) {
+    return this._http.post<T>( `${this.url}product`, product);
   }
 
-  deleteProduct(id){
-    let options = {
-      headers: new HttpHeaders(
-        {
-          'Content-Type': 'application/json'
-        })
-    };
-    return this._http.delete(
-      this.url + 'product/' + id,
-      options
-    ).pipe(map(res => res));
+  deleteProduct(id: string){
+    return this._http.delete(`${this.url}product/${id}`);
   }
 
-
-
-  updateProduct(id, product){
-    let params = JSON.stringify(product);
-    let options = {
-      headers: new HttpHeaders(
-        {
-          'Content-Type': 'application/json'
-        })
-    };
-    return this._http.put(
-      this.url + 'product/' + id, 
-      params,
-      options
-    ).pipe(map(res => res));
+  updateProduct<T>(id:string, product:any){
+    return this._http.put<T>( `${this.url}product/${id}`, product);
   }
 
 }

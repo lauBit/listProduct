@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css']
 })
-export class AddProductComponent implements OnInit {
+export class AddProductComponent {
   product: Product;
   productCreate;
   actualizacionCorrecta:boolean;
@@ -19,15 +19,10 @@ export class AddProductComponent implements OnInit {
     this.product = new Product('', '', '', null, '');
   }
 
-  ngOnInit(): void {
-  }
-
   createProduct(){
     this.productService.createProduct(this.product).subscribe(
       (response:any)=>{
         if(response.product){
-          
-          console.log(response.product)
           this.productCreate = "El producto se ha creado correctamente";
         }else{
           this.productCreate = "No se creo el producto";

@@ -4,7 +4,7 @@
 <form #form="ngForm" (ngSubmit)="updateProduct(product._id)" ngNativeValidate>
   <div class="form-group">
     <label>Nombre</label>
-    <input type="text" class="form-control" name="name" #name="ngModel" [ngModel]="product.name" required>
+    <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="product.name" required>
   </div>
   <div class="form-group">
     <label>Descripción</label>
