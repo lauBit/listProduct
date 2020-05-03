@@ -1,0 +1,23 @@
+<h1>Registrar productos</h1>
+<hr>
+<p>Diligencia toda la información de este formulario para crear un producto</p>
+<form #addForm="ngForm" (ngSubmit)="createProduct()" ngNativeValidate>
+    <div class="form-group">
+      <label>Nombre</label>
+      <!-- <input type="text" class="form-control" name="edad" #edad="ngModel" [(ngModel)]="usuario.edad" required> -->
+      <input type="text" class="form-control" name= "name" #name="ngModel" [(ngModel)]="product.name" required>
+    </div>
+    <div class="form-group">
+      <label>Descripción</label>
+      <input type="text" class="form-control" name= "description" #description="ngModel" [(ngModel)]="product.description" required>
+    </div>
+    <div class="form-group">
+        <label>Precio</label>
+        <input type="number" class="form-control" #price="ngModel" name="price" [(ngModel)] = "product.price" required pattern="[0-9]\d{5,10}" placeholder="10000">
+    </div>
+    <div class="form-group">
+        <label>Tipo de producto</label>
+        <input type="text" class="form-control" name= "type" #type="ngModel" [(ngModel)]="product.type" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>

@@ -1,0 +1,15 @@
+<h1>Lista Productos</h1>
+<br>
+<button [routerLink]="['/addProduct']" type="button" class="btn btn-block btn-outline-success">Crear nuevo producto</button>
+<hr>
+<div class="card-columns" *ngIf= 'existProduct'>
+  <div class="card border-dark mb-3" style="max-width: 18rem;" *ngFor="let product of products">
+      <div class="card-header">{{product.name}}</div>
+      <div class="card-body text-primary">
+        <h5 class="card-title">{{product.price}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <a (click)= "update( product )"class="btn btn-outline-primary">Editar</a>
+        <button class="btn btn-outline-danger" (click)="deleteProduct(product._id)">Eliminar</button>
+      </div>
+  </div>
+</div>
