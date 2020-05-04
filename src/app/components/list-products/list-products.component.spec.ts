@@ -4,8 +4,6 @@ import { ListProductsComponent } from './list-products.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ProductService } from 'src/app/services/product.service';
-import { map } from 'rxjs/operators';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from 'src/app/models/product';
 import { throwError, of } from 'rxjs';
 import { FormsModule } from '@angular/forms';

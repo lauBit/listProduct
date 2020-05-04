@@ -1,9 +1,7 @@
 {
-  "name": "frontend",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "listProducts",
+  "version": "0.0.0",
   "scripts": {
-    "start": "node index.js",
     "ng": "ng",
     "startServe": "ng serve",
     "build": "ng build",
