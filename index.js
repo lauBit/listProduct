@@ -2,7 +2,6 @@
 var mongoose = require("mongoose");
 var app = require('./app');
 var express =require("express");
-var port = 3977;
 var socketio = require('socket.io');
 
 const http = require('http');
@@ -29,12 +28,12 @@ mongoose.connect('mongodb+srv://lauraVCamelo:kirita13.@dbsupermarket-pk06e.mongo
     console.log(error);
 });
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4200);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-require('./sockets')(io);
+// require('./sockets')(io);
 
 server.listen(app.get('port'), () => {
-    console.log(`server op port ${app.get('port')}`);
+    console.log(`Servidor escuchando en el puerto ${app.get('port')}`);
 });

@@ -23,7 +23,7 @@ function getProductById(req,res){
         res.status(500).send({message: "Error en el servidor"});
       } else {
         if (products.length === 0) {
-          res.status(404).send({ message: "No se encontraron canciones" });
+          res.status(404).send({ message: "No se encontraron productos" });
         } else {
           res.status(200).send({ products });
         }

@@ -1,6 +1,6 @@
 'use strict'
 var mongoose = require("mongoose");
-var Schema = mongoose.Schema; // genera la forma del modelo, declaración de tipo de dato de los atributos
+var Schema = mongoose.Schema;
 
 var productSchema = Schema({
     name: String,
